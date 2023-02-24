@@ -1,4 +1,4 @@
-package ds.graphs;
+package graphs.intro;
 
 public class Main {
     public static void main(String[] args){
