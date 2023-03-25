@@ -1,10 +1,13 @@
 package arrays.isUnique;
+import java.util.HashMap;
 import java.util.Hashtable;
+
 public class Main {
     public static void main(String[] args){
         String str = "Milk";
         // isUnique(str);
-        isUniqueOpt(str);
+        // isUniqueOpt(str);
+        isUniqueOptTwo(str);
     }
     // Time Complexity: O(n^2)
     // Space Complexity: O(n)
@@ -21,7 +24,7 @@ public class Main {
         System.out.println("true");
         return true;
     }
-    
+
     // Time Complexity: O(n)
     // Space Conplexity: O(n)
     public static boolean isUniqueOpt(String str){
@@ -33,6 +36,20 @@ public class Main {
                 return false;
             }
             table.put(str.charAt(i), i);
+        }
+        System.out.println("true");
+        return true;
+    }
+    // Time Complexity: O(n)
+    // Space Complexity: O(n)
+    public static boolean isUniqueOptTwo(String str){
+        HashMap<Character, Integer> map = new HashMap<>();
+        for(int i = 0; i < str.length(); i++){
+            if(map.containsKey(str.charAt(i))){
+                System.out.println("false");
+            }
+            // Using a constant for all the keys reduces memory usage
+            map.put(str.charAt(i), 1); // uses 1 because it is a constant and we only need to check if the key exists or not
         }
         System.out.println("true");
         return true;
