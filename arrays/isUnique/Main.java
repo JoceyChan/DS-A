@@ -1,5 +1,6 @@
 package arrays.isUnique;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Hashtable;
 
 public class Main {
@@ -7,7 +8,8 @@ public class Main {
         String str = "Milk";
         // isUnique(str);
         // isUniqueOpt(str);
-        isUniqueOptTwo(str);
+        // isUniqueOptTwo(str);
+        isUniqueMostOpt(str);
     }
     // Time Complexity: O(n^2)
     // Space Complexity: O(n)
@@ -55,4 +57,18 @@ public class Main {
         return true;
     }
     
+    //Time Complexity: O(n)
+    //Space Complexit: O(n)
+    public static boolean isUniqueMostOpt(String str){
+        HashSet<Character> set = new HashSet<>();
+        for(int i = 0; i < str.length(); i++){
+            if(set.contains(str.charAt(i))){
+                System.out.println("false");
+                return false;
+            }
+            set.add(str.charAt(i));
+        }
+        System.out.println("true");
+        return true;
+    }
 }
