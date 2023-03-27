@@ -10,3 +10,9 @@ public class Main {
 // to be limited to just dictionary words. 
 
 // I/P: Tact Coa || O/P: True (permutations: "taco cat", "atco cta", etc.)
+
+
+// Brute Force
+// 1. remove all spaces
+// 2. iterate through string
+// 3. check if 1st letter is the same as the last letter
