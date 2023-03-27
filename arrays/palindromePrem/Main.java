@@ -1,6 +1,11 @@
 package arrays.palindromePrem;
 
 public class Main {
+    public static void main(String[] args){
+        String str = "Tact Coa";
+
+        palindromePrem(str);
+    }
     
 }
 // Problem 1.4 Palindrome Premutations 
