@@ -4,19 +4,31 @@ public class Main {
     public static void main(String[] args){
         String str = "A letter sent to you";
         // creating a charArray from the string
-        char[] charArray = str.toCharArray();
+        // char[] charArray = str.toCharArray();
 
         // Iterating through the array of character, looking for any "A" characters
-        for(int i = 0; i < charArray.length; i++){
+        // for(int i = 0; i < charArray.length; i++){
             // if character 'A' is found then replace it with 't' and using helper method to insert the characters in the array
-            if(charArray[i] == 'A'){
-                charArray[i] = 't';
-                charArray = insertAtPosition(charArray, i+1, "he".toCharArray());
+        //     if(charArray[i] == 'A'){
+        //         charArray[i] = 't';
+        //         charArray = insertAtPosition(charArray, i+1, "he".toCharArray());
+        //     }
+        // }
+        // Conversts modified array of characters back into a String 
+        // String output = new String(charArray);
+        // System.out.println(output);
+
+        // Optimized
+        StringBuilder outputStr = new StringBuilder();
+        for(int i = 0; i < str.length(); i++){
+            if(str.charAt(i) == 'A'){
+                outputStr.append("the");
+            }
+            else{
+                outputStr.append(str.charAt(i));
             }
         }
-        // Conversts modified array of characters back into a String 
-        String output = new String(charArray);
-        System.out.println(output);
+        System.out.println(outputStr.toString());
 
     }
     // Time Complexity: O(n^2)
