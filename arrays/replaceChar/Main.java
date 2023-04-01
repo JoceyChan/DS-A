@@ -19,15 +19,24 @@ public class Main {
         // System.out.println(output);
 
         // Optimized
+        // Time Complexity: O(n)
+        // Space Complexity: O(n)
+        
+        //Stores modified string
         StringBuilder outputStr = new StringBuilder();
+        // Iterate over each character 
         for(int i = 0; i < str.length(); i++){
+            // checking if the input string character is 'A'
             if(str.charAt(i) == 'A'){
+                // if true then we append "the" to the StringBuilder
                 outputStr.append("the");
             }
             else{
+                // if false then append the character to the StringBuilder
                 outputStr.append(str.charAt(i));
             }
         }
+        // Convert the "StringBuilder" to a string
         System.out.println(outputStr.toString());
 
     }
