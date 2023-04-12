@@ -13,6 +13,10 @@ public class Main {
                 }
             }
         }
+        // Print Array
+        for(int i = 0; i < intArray.length; i++){
+            System.out.println(intArray[i]);
+        }
     }
     public static void swap(int[] array, int i, int j){ // swap method
         if(i == j){
