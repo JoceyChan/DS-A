@@ -1,13 +1,15 @@
 package leetcode.twoSum;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args){
         int[] nums = {2, 7, 11, 15};
         int target = 9; 
 
-        bruteForce(nums, target); 
+        // bruteForce(nums, target); 
         // arrayListSol(nums, target); 
+        optimizedSol(nums, target);
     }
     // Time Complexity: O(n^2)
     // Space Complexity: O(1)
@@ -45,6 +47,26 @@ public class Main {
                 // return res;
             }
             list.add(nums[i]); // adding values to list
+        }
+        // return null;
+    }
+
+    // Time Complexity: O(n)
+    // Space Complexity: O(n)
+    public static void optimizedSol(int[] nums, int target){
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for(int i = 0; i < nums.length; i++){
+            int complement = target - nums[i]; 
+            if(map.containsKey(complement) && map.get(complement) != i){
+                int[] res = new int[2];
+                res[0] = map.get(complement);
+                res[1] = i;
+                System.out.println(res[0]);
+                System.out.println(res[1]);
+                // return res;
+            }
+            map.put(nums[i], i);
         }
         // return null;
     }
