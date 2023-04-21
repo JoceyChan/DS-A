@@ -8,25 +8,18 @@ public class Main {
         optimizedSolution(prices);
     }
 
-    // Time Complexity: O(n)
+    // Time Complexity: O(n^2)
     // Space Complexity: O(1)
     public static int bruteForce(int[] prices){
         int maxProfit = 0;
-        int minPrice = Integer.MAX_VALUE;
-
-        for(int i = 0; i < prices.length; i++){
-            if(prices[i] < minPrice){
-                minPrice = prices[i];
-            }
-            else{
-                int diff = prices[i] - minPrice;
-                // System.out.println(diff);
-                if(diff > maxProfit){
-                    maxProfit = diff;
+        for (int i = 0; i < prices.length; i++) {
+            for (int j = i + 1; j < prices.length; j++) {
+                int profit = prices[j] - prices[i];
+                if (profit > maxProfit) {
+                    maxProfit = profit;
                 }
             }
         }
-        System.out.println(maxProfit);
         return maxProfit;
     }
 
