@@ -23,6 +23,8 @@ public class Main {
         return maxProfit;
     }
 
+    // Time Complexity: O(n)
+    // Space Complexity: O(1)
     public static int optimizedSolution(int[] prices){
         int maxProfit = 0;
         int minPrice = Integer.MAX_VALUE;
