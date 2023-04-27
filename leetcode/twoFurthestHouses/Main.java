@@ -35,15 +35,15 @@ public class Main {
     // Space Complexity: O(1)
     public static int optimized(int[] colors){
         int ans = -1;
-        int left = 0,right = colors.length - 1;
-        while(left <= right){
-            if(colors[left] == colors[right]){
-                right--;
+        int left = 0,right = colors.length - 1; 
+        while(left <= right){ // 0 <= 6, 0 <= 5, 0 <= 4, 0 <= 3 | 1 <= 2, 1 <= 0
+            if(colors[left] == colors[right]){ // 1 == 1, 1 == 1, 1 == 1, 1 == 6 | 1 == 1
+                right--; // 5, 4, 3, 1
             }
             else{
-                ans = Math.max(ans, right - left);
-                left++;
-                right = colors.length - 1;
+                ans = Math.max(ans, right - left); // ans = 3
+                left++; // 1 
+                right = colors.length - 1; // 2
             }
         }
         System.out.println(ans);
